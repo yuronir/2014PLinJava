@@ -1,0 +1,6 @@
+
+public class Column {
+	private int[] rawData;
+	
+	
+}

@@ -1,0 +1,79 @@
+import java.util.Random;
+
+
+
+/*
+ * TODO
+ * 
+ * 1.사람 수 입력
+ * 2.사람 수만큼의 Col 생성
+ * 3.각 Raw에 랜덤으로 선긋기
+ * (col의 row지점에 랜덤-> 왼쪽 col은 +1, 오른쪽 col은 -1)
+ */
+
+
+public class Ladder {
+	int rawCount;
+	int personCount;
+	Column[] column;
+	People[] people;
+	
+	public Ladder(int personCount){
+		Init(personCount);
+		makeLadder();
+		getPersonName();
+	}
+
+	private void getPersonName() {
+		// TODO Auto-generated method stub
+		System.out.println("");
+	}
+
+	private void makeLadder(){
+		setRandomRaw();
+	}
+	
+	private void setRandomRaw(){
+		for(int i = 0; i < rawCount; i++){
+			for(int j = 0; j < personCount-1; j++){
+				
+				if(hasRaw())
+					makeRaw(i,j);
+				
+			}
+		}
+	}
+	
+	private void makeRaw(int i, int j){
+		column[i].setRaw(j, 1);
+		column[i].setRaw(j+1, -1);		
+	}
+	
+	private Boolean hasRaw(){
+		return new Random().nextBoolean();
+	}
+
+	//Column, People객체를 초기화해주고, Raw 줄수를 지정한다..
+	private void Init(int personCount){
+		
+		System.out.println("초기화합니다...");
+		
+		this.personCount = personCount;
+		people = new People[personCount];
+		column = new Column[personCount];
+		setRawNum();
+		for(int i = 0; i < personCount; i++){
+			column[i] = new Column(rawCount);
+		}
+		
+		System.out.println("초기화 완료!");
+	}
+	
+	private void setRawNum(){
+		rawCount = personCount*2;
+	}
+	
+	public void printLadder(){
+		
+	}
+}

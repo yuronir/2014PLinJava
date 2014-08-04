@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;StringCalculatorTest.testSplitWhenComma().cal&apos; in &apos;StringCalculatorTest.testSplitWhenComma()&apos; to field&#x0D;&#x0A;- Original project: &apos;tddcalculator&apos;&#x0D;&#x0A;- Original element: &apos;StringCalculatorTest.testSplitWhenComma().cal&apos;&#x0D;&#x0A;- Field name: &apos;cal&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" description="Convert local variable &apos;cal&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/test&lt;{StringCalculatorTest.java" name="cal" selection="202 3" stamp="1405497498965" static="false" version="1.0" visibility="2"/>
+</session>

@@ -1,0 +1,14 @@
+import junit.framework.TestCase;
+
+
+public class LadderTest extends TestCase {
+
+	public void testGetPersonName() {
+		fail("Not yet implemented");
+	}
+
+	public void testSetPersonData() {
+		fail("Not yet implemented");
+	}
+
+}

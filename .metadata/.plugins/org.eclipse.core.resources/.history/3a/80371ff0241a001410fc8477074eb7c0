@@ -1,0 +1,6 @@
+
+public class Ladder_Col {
+	private int[] rawData;
+	
+	
+}

@@ -1,0 +1,122 @@
+import java.util.Random;
+import java.util.Scanner;
+
+/*
+ * TODO
+ * 
+ * 1.사람 수 입력 OK
+ * 2.사람 수만큼의 Col 생성 OK
+ * 3.각 Raw에 랜덤으로 선긋기 OK
+ * (col의 row지점에 랜덤-> 왼쪽 col은 +1, 오른쪽 col은 -1)
+ * 
+ * 4.각 Raw의 사람을 출발시켜서 도착점 찾기
+ * 
+ */
+
+
+public class Ladder {
+
+	Scanner sc = new Scanner(System.in);
+	int rawCount;
+	int personCount;
+	Column[] column;
+	People[] people;
+
+	public Ladder(int personCount){
+		Init(personCount);
+		makeLadder();
+		getPersonName(0);
+	}
+
+	public void getPersonName(int startEmptyNum) {
+
+		String[] nameList;
+		int gapCount;
+		int afterEmptyNum;
+
+		System.out.println("입력이 필요한 인원수 : " + (personCount - startEmptyNum) + "명입니다.\n"
+				+ "각 이름을 띄어쓰기로 나누어 입력해주세요.\n"
+				+ "Ex) 이용은 최승희 서재원");
+
+		nameList = sc.nextLine().split(" ");
+		gapCount = personCount - startEmptyNum - nameList.length; //입력받은 사람 수와 입력받아야 하는 사람 수의 차.
+
+		if(gapCount < 0){ //초과입력
+			System.out.println("입력한 사람 이름이 인원수를 초과하였습니다. 다시 입력해주세요.");
+			getPersonName(startEmptyNum);
+			return;
+		} 
+
+		afterEmptyNum = setPersonData(nameList, startEmptyNum);
+
+		if(gapCount > 0){
+			System.out.println(gapCount + "명을 더 입력해야 합니다.");
+			getPersonName(afterEmptyNum);
+		} else {
+			for(int i = 0; i < personCount; i++){
+				System.out.println(people[i].getName());
+			}
+		}
+	}
+
+	public int setPersonData(String[] nameList, int startEmptyNum){
+
+		for(int i = 0; i < nameList.length; i++, startEmptyNum++){
+			people[startEmptyNum] = new People(nameList[i], i);
+		}
+
+		return startEmptyNum;
+	}
+
+	private void makeLadder(){
+		setRandomRaw();
+	}
+
+	private void setRandomRaw(){
+		for(int i = 0; i < personCount-1; i++){
+			for(int j = 0; j < rawCount; j++){
+
+				if(hasRaw())
+					makeRaw(i,j);
+
+			}
+		}
+	}
+
+	private void makeRaw(int i, int j){
+		try{
+			column[i].setRaw(j, 1);
+			column[i].setRaw(j+1, -1);		
+		} catch(Exception e) {
+			System.out.println("error!");
+		}
+	}
+
+	private Boolean hasRaw(){
+		return new Random().nextBoolean();
+	}
+
+	//Column, People객체를 초기화해주고, Raw 줄수를 지정한다..
+	private void Init(int personCount){
+
+		System.out.println("초기화합니다...");
+
+		this.personCount = personCount;
+		people = new People[personCount];
+		column = new Column[personCount];
+		setRawNum();
+		for(int i = 0; i < personCount; i++){
+			column[i] = new Column(rawCount);
+		}
+
+		System.out.println("초기화 완료!");
+	}
+
+	private void setRawNum(){
+		rawCount = personCount*2;
+	}
+
+	public void printLadder(){
+
+	}
+}
