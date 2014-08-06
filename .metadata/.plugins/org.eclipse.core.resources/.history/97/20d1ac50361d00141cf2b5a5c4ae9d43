@@ -29,6 +29,7 @@ public class Ladder {
 		printLadder();
 	}
 
+
 	private void makeLadder(){
 		setRandomRaw();
 	}

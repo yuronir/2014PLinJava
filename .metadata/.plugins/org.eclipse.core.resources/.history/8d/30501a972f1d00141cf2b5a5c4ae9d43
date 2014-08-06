@@ -9,23 +9,6 @@ public class Initialize {
 	public Initialize(Ladder ld){
 		this.ld = ld;
 	}
-
-	//Column, People객체를 초기화해주고, Raw 줄수를 지정한다..
-	public void Init(){
-
-		System.out.println("초기화합니다...");
-		ld.personCount = getPersonCount();
-		ld.people = new People[ld.personCount];
-		ld.column = new Column[ld.personCount];
-		setRawNum();
-		for(int i = 0; i < ld.personCount; i++){
-			ld.column[i] = new Column(ld.rawCount);
-		}
-
-		System.out.println("초기화 완료!");
-		
-		getPersonName(0);
-	}
 	
 	private int getPersonCount() {
 		
@@ -91,6 +74,23 @@ public class Initialize {
 		return startEmptyNum;
 	}
 
+	//Column, People객체를 초기화해주고, Raw 줄수를 지정한다..
+	public void Init(){
+
+		System.out.println("초기화합니다...");
+		ld.personCount = getPersonCount();
+		ld.people = new People[ld.personCount];
+		ld.column = new Column[ld.personCount];
+		setRawNum();
+		for(int i = 0; i < ld.personCount; i++){
+			ld.column[i] = new Column(ld.rawCount);
+		}
+
+		System.out.println("초기화 완료!");
+		
+		getPersonName(0);
+	}
+	
 	private void setRawNum(){
 		ld.rawCount = ld.personCount*2;
 	}

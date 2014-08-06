@@ -13,7 +13,7 @@ public class Column {
 	
 	public int getDirection(int rawNum){
 		try{
-			return rawData[rawNum];
+		return rawData[rawNum];
 		} catch(Exception e) {
 			return 0;
 		}
