@@ -16,11 +16,11 @@ import java.util.Scanner;
 
 public class Ladder {
 
-	private Scanner sc = new Scanner(System.in);
-	private int rawCount;
-	private int personCount;
-	private Column[] column;
-	private People[] people;
+	Scanner sc = new Scanner(System.in);
+	int rawCount;
+	int personCount;
+	Column[] column;
+	People[] people;
 	/**
 	 * 특별한 이유가 없으면 객체의 필드는 private 접근 제어자로 구현
 	 */

@@ -16,14 +16,14 @@ import java.util.Scanner;
 
 public class Ladder {
 
-	private Scanner sc = new Scanner(System.in);
-	private int rawCount;
-	private int personCount;
-	private Column[] column;
-	private People[] people;
+	Scanner sc = new Scanner(System.in);
+	int rawCount;
+	int personCount;
+	Column[] column;
+	People[] people;
 	/**
 	 * 특별한 이유가 없으면 객체의 필드는 private 접근 제어자로 구현
-	 */
+	 * /
 
 	public Ladder(){
 		Initialize it = new Initialize(this);
@@ -41,7 +41,7 @@ public class Ladder {
 		 * 지금은 Random으로 사다리를 생성할 수 밖에 없다.
 		 * Random이 아니라 사용자가 직접 사다리를 그릴 수 있는 기능까지 지원하고 싶다면 클래스 구조를 어떻게 가져가면 좋을까?
 		 * 자바의 interface 공부하고 interface 활용해서 구현 시도해 보면 좋겠다.
-		 */
+		 * /
 		Random rd = new Random();
 		int rdRaw;
 		
@@ -61,6 +61,11 @@ public class Ladder {
 	}
 
 	public void printLadder(){
+		
+<<<<<<< HEAD
+		for(int rawNum = 0; rawNum < rawCount; rawNum++){
+			printLadderCol(rawNum);
+=======
 		for(int i = 0; i < rawCount; i++){
 			for(int j = 0; j < personCount; j++){
 				if(column[j].getDirection(i) == 1){
@@ -74,9 +79,27 @@ public class Ladder {
 				 * Direction이라는 enum 또는 class를 만들어서 위 if/else 제거해 봐라.
 				 * 책의 다형성 공부하고 접근해 보면 좋겠다.
 				 * 다형성을 활용해 if/else 제거해 보면 연습이 객체 지향에서 중요하다. javajigi
-				 */
+				 * /
 			}
 			System.out.println();
+>>>>>>> c966cfdd846961ce07c7fae499c9b51625e88ba6
 		}
+	}
+	
+	private void printLadderCol(int rawNum){
+		for(int j = 0; j < personCount; j++){
+			definePrint(column[j].getDirection(rawNum));
+		}
+		System.out.println();		
+	}
+	
+	private void definePrint(int direction){
+		if(direction == 1){
+			System.out.print("��");
+		} else if(direction == -1){
+			System.out.print("��");
+		} else {
+			System.out.print("��");
+		}		
 	}
 }

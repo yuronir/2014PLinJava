@@ -11,7 +11,7 @@ public class Initialize {
 	}
 
 	//Column, People객체를 초기화해주고, Raw 줄수를 지정한다..
-	public void Init()
+	public void Init(){
 
 		System.out.println("초기화합니다...");
 		ld.personCount = getPersonCount();
