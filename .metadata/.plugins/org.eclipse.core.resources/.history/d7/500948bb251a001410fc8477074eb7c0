@@ -1,6 +1,0 @@
-
-public class People {
-	private String name;
-	private int nowLocation;
-	private int arrival;
-}

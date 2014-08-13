@@ -1,0 +1,5 @@
+package source;
+
+public class Person {
+	private String name;
+}

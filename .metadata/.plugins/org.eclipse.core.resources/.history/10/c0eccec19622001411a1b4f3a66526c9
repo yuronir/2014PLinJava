@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+import Ladder.Ladder;
+
+
+public class Init {
+
+	Scanner sc = new Scanner(System.in);
+	
+	public Init(){
+		int pCount = getPeopleCount();
+		
+	}
+	
+	public int getPeopleCount(){
+		
+		int pCount;
+		
+		System.out.print("인원수를 입력해주세요 : ");
+		pCount = getNumber();
+
+		if(isLessThan(pCount, 2)){
+			System.out.println("최소 두 명의 인원이 필요합니다.");
+			return getPeopleCount();
+		}
+		
+		return pCount;
+	}
+	
+	public Ladder secondStep(){
+		
+		Ladder ld = new Ladder();
+		int choice;
+		
+		System.out.println("선을 어떻게 그으시겠습니까?\n "
+				+ "1.직접 선 긋기\n"
+				+ "2.임의로 선 긋기");
+		
+		choice = getNumber();
+		
+		switch(choice){
+		case 1:
+			ld.
+		}
+	}
+	
+	public boolean isLessThan(int input, int compareInt){
+		
+		boolean result = false;
+		
+		if(input < compareInt){
+			result = true;
+		}
+		return result;
+	}
+	
+	public int getNumber(){
+		
+		String temp = sc.nextLine();
+		int number;
+		
+		try{
+			number = Integer.parseInt(temp);
+		} catch(Exception e){
+			System.out.println("잘못된 입력입니다.");
+			return getNumber();
+		}
+		
+		return number;
+	}
+}

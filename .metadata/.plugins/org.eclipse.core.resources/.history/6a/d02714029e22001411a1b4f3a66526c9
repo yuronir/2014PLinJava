@@ -1,0 +1,35 @@
+package source;
+
+
+public class Ladder {
+	private Row[] row;
+	private Column[] col;
+	
+	public Ladder(int pCount){
+		col = new Column[pCount];
+	}
+	
+	public void setRow(int type){
+		if(type == 1)
+			drawManualLine();
+		else
+			drawRandomLine();
+	}
+	
+	private void drawManualLine(){
+		
+	}
+	
+	private void drawRandomLine(){
+		System.out.println("몇 줄을 그을까요? 범위 : " + col.length + " ~ " + col.length*2);
+		
+		int rowCount = Util.getNumber();
+		if(Util.isInRange(rowCount, col.length,	col.length*2) == false){
+			System.out.println("범위 내의 숫자를 선택해주세요.");
+			drawRandomLine();
+			return;
+		}
+		
+		
+	}
+}

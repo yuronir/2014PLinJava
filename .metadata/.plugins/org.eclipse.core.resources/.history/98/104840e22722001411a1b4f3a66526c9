@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+
+public class Init {
+
+	Scanner sc = new Scanner(System.in);
+	
+	public Init(){
+		
+	}
+	
+	public int getPeopleCount(){
+		
+		int pCount;
+		
+		System.out.print("인원수를 입력해주세요 : ");
+		
+		try{
+			pCount = sc.nextInt();
+		} catch(Exception e){
+			System.out.println("잘못된 입력입니다.");
+			return getPeopleCount();
+		}
+		
+		if(isLessNum(pCount, 2)){
+			System.out.println("최소 두 명의 인원이 필요합니다.");
+			return getPeopleCount();
+		}
+		
+		return pCount;
+	}
+	
+	public boolean isLessNum(int input, int compareInt){
+		
+		boolean result = false;
+		
+		if(input < compareInt){
+			result = true;
+		}
+		return result;
+	}
+}

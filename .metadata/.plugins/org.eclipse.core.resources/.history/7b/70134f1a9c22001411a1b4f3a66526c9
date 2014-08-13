@@ -1,0 +1,28 @@
+
+public class Util {
+	
+	public boolean isLessThan(int input, int compareInt){
+		
+		boolean result = false;
+		
+		if(input < compareInt){
+			result = true;
+		}
+		return result;
+	}
+	
+	public int getNumber(){
+		
+		String temp = sc.nextLine();
+		int number;
+		
+		try{
+			number = Integer.parseInt(temp);
+		} catch(Exception e){
+			System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+			return getNumber();
+		}
+		
+		return number;
+	}
+}

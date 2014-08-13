@@ -1,0 +1,13 @@
+
+
+public class Row {
+	private int[][] rowList;
+	
+	public Row(){
+		rowList = new int[10][2];
+	}
+	
+	public void addRow(int colNum, int rowNum){
+		
+	}
+}

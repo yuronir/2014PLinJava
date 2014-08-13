@@ -1,0 +1,7 @@
+package Ladder;
+
+public class Ladder {
+	public enum Type {
+		Manual, Random
+	}
+}

@@ -1,0 +1,28 @@
+package source;
+
+
+public class Ladder {
+	private Row[] row;
+	private Column[] col;
+	
+	public Ladder(int pCount){
+		col = new Column[pCount];
+	}
+	
+	public void setRow(int type){
+		if(type == 1)
+			setManualRow();
+		else
+			setRandomRow();
+	}
+	
+	private void setManualRow(){
+		
+	}
+	
+	private void setRandomRow(){
+		System.out.println("몇 줄을 그을까요? 범위 : " + col.length + " ~ " + col.length*2);
+		
+		int rowCount = Util.getNumber();
+	}
+}

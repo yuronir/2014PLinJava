@@ -1,0 +1,10 @@
+import junit.framework.TestCase;
+
+
+public class InitTest extends TestCase {
+
+	public void testGetPeopleCount() {
+		fail("Not yet implemented");
+	}
+
+}

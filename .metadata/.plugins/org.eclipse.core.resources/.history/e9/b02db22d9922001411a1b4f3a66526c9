@@ -1,0 +1,6 @@
+
+
+public class Ladder {
+	private Row row;
+	private Column col;
+}

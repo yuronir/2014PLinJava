@@ -1,0 +1,10 @@
+package Ladder;
+
+public class Ladder {
+	private enum Type {
+		Manual, Random
+	}
+	private Type type;
+	
+	public 
+}

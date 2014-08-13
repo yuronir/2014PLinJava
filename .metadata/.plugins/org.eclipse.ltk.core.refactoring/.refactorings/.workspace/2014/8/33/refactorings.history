@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;LadderGame_Final&apos;" deleteContents="false" description="Delete resource &apos;LadderGame_Final&apos;" element1="/LadderGame_Final" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1407828208255"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;LadderGame_Final&apos;" deleteContents="false" description="Delete resource &apos;LadderGame_Final&apos;" element1="/LadderGame_Final" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1407828208255"/>&#x0A;<refactoring comment="Delete resource &apos;LadderGame_Final&apos;" deleteContents="false" description="Delete resource &apos;LadderGame_Final&apos;" element1="/LadderGame_Final" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1407832589179"/>
 </session>
