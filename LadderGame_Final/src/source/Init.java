@@ -1,29 +1,23 @@
 package source;
-import java.util.Scanner;
 
 public class Init {
 
-	private final int manual = 1;
-	private final int random = 2;
 	private int type; 
 	
-	Scanner sc = new Scanner(System.in);
-	Ladder ld;
+	private Ladder ld;
+	private int pCount;
 	
 	public Init(){}
 	
 	public void InitStart(){
-		firstStep();
-		secondStep();
-		thirdStep();
-	}
-	
-	private void thirdStep() {
-		ld.drawLine(type);
+		firstStep();		//사람 수 입력
+		secondStep();	//선 긋는 방식 선택
+		thirdStep();		//선 긋기
+		fourthStep();	//사람 정보 입력
 	}
 
 	private void firstStep() {
-		int pCount = getPeopleCount();
+		pCount = getPeopleCount();
 		ld = new Ladder(pCount);
 	}
 
@@ -38,15 +32,22 @@ public class Init {
 		
 		choice = Util.getNumber();
 
-		if(choice != manual && choice != random){
+		if(choice != Ladder.manual && choice != Ladder.random){
 			System.out.println("잘못된 선택입니다.");
 			secondStep();
 		}
 		
 		type = choice;
 	}
-
-
+	
+	private void thirdStep() {
+		ld.drawLine(type);
+	}
+	
+	private void fourthStep(){
+		ld.setLineName();
+	}
+	
 	//인원수 입력
 	public int getPeopleCount(){
 		
@@ -61,5 +62,9 @@ public class Init {
 		}
 		
 		return pCount;
+	}
+
+	public Ladder getLadder() {
+		return ld;
 	}
 }

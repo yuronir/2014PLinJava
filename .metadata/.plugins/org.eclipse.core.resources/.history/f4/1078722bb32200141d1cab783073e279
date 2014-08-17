@@ -1,0 +1,7 @@
+package source;
+
+public class Go {
+	public static void run(Ladder ld){
+		for(ld = )
+	}
+}

@@ -1,8 +1,0 @@
-package Ladder;
-
-public class Ladder {
-	public static enum Type {
-		Manual, Random
-	}
-	
-}

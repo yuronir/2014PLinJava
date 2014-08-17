@@ -2,14 +2,21 @@ package source;
 
 import java.util.Random;
 
+import source.Column.Direction;
+
 
 public class Ladder {
+
+	public final static int manual = 1;
+	public final static int random = 2;
+	
 	private Row row;
 	private Column[] col;
-	private People people;
+	private People[] people;
 	
 	public Ladder(int pCount){
 		col = new Column[pCount];
+		people = new People[pCount];
 	}
 	
 	public void drawLine(int type){
@@ -24,9 +31,9 @@ public class Ladder {
 		
 		row = new Row(rowCount);
 		
-		if(type == 1)
+		if(type == manual)
 			drawManualLine(rowCount);
-		else
+		else if(type == random)
 			drawRandomLine(rowCount);
 	}
 	
@@ -47,6 +54,30 @@ public class Ladder {
 		for(int i = 0; i < rowCount; i++){
 			rdColAt = rd.nextInt(col.length-1);
 			row.setRow(i, rdColAt);
+			col[rdColAt].setDirection(i, Direction.Right);
+			col[rdColAt+1].setDirection(i, Direction.Left);
 		}
+	}
+
+	public void setLineName() {
+		System.out.println("각 라인의 이름을 입력해주세요.");
+		
+		for(int i = 0; i < people.length; i++){
+			String name = Util.getString();
+			people[i] = new People(name, i);
+		}
+	}
+
+	public int getPCount(){
+		return people.length;
+	}
+	
+	public void printLadder(){
+		
+	}
+
+	public void movePerson() {
+		// TODO Auto-generated method stub
+		
 	}
 }

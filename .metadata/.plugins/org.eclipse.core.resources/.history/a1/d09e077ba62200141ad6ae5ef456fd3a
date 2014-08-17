@@ -1,0 +1,21 @@
+package source;
+
+public class Column {
+	private int[] rowData;
+	
+	public Column(int rowCount) {
+		rowData = new int[rowCount];
+	}
+	
+	public void setrow(int rowNum, int direction){
+		rowData[rowNum] = direction;
+	}
+	
+	public int getDirection(int rowNum){
+		try{
+			return rowData[rowNum];
+		} catch(Exception e) {
+			return 0;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+package source;
+
+public class People {
+	private String name;
+	private int startPoint;
+
+	public People(String name, int startPoint){
+		this.name = name;
+		this.startPoint = startPoint;
+	}
+	
+	public String getName() {
+		return name;
+	}
+}

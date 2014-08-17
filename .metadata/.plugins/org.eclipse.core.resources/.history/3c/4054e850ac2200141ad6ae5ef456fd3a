@@ -1,0 +1,16 @@
+package source;
+
+public class People {
+	private String name;
+	private int nowPoint;
+	private int destination; 
+
+	public People(String name, int startPoint){
+		this.name = name;
+		this.nowPoint = startPoint;
+	}
+	
+	public String getName() {
+		return name;
+	}
+}

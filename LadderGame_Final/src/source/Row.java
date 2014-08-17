@@ -2,13 +2,13 @@ package source;
 
 
 public class Row {
-	private int[][] row;
+	private int[] row;
 	
 	public Row(int rowCount){
-		row = new int[rowCount][2];
+		row = new int[rowCount];
 	}
 	
 	public void setRow(int rowNum, int colAt){
-		row[rowNum] = new int[]{rowNum, colAt};
+		row[rowNum] = colAt;
 	}
 }

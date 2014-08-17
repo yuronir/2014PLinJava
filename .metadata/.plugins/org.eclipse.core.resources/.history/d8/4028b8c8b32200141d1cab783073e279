@@ -1,0 +1,19 @@
+package source;
+
+public class Go {
+	
+	static Ladder ladder;
+	
+	public static void run(Ladder ld){
+		
+		ladder = ld;
+		
+		for(int i = 0; i < ladder.getPCount(); i++){
+			movePerson(i);
+		}
+	}
+
+	private static void movePerson(int i) {
+		
+	}
+}

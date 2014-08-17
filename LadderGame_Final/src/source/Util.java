@@ -23,6 +23,17 @@ public class Util {
 		return result;
 	}
 	
+	public static String getString(){
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String name = sc.nextLine();
+		
+		sc.close();
+
+		return name;
+	}
+	
 	public static int getNumber(){
 		
 		Scanner sc = new Scanner(System.in);
